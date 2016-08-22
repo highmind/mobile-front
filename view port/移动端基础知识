@@ -1,0 +1,68 @@
+移动端基础知识：
+一、移动端像素和ppi
+1. px : css pixels 逻辑像素，浏览器相对单位
+
+2. dp,pt: 设备无关像素，物理像素，屏幕上的实际像素，即手机厂商宣传的像素
+
+3. dpr ： devicePixelRatio 设备像素缩放比
+
+计算公式：1px = dpr * dpr * dp
+
+1. 为什么iphone5是 320px * 568px
+
+   因为 iphone5的 dpr 为 2
+
+
+2. DPI：打印机每英寸可以喷的墨汁点 用于印刷行业
+
+   PPI： 屏幕每英寸的像素数量，即单位英寸内的像素密度
+
+
+   计算公式：(使用物理像素)
+
+     ppi = √((1136*1136 + 640*640)  / 4) = 326ppi (视网膜屏幕)
+
+     Tip: ppi越高，系统默认缩放比越大，同等面积的屏幕就会越清除，但是内容会越小
+
+             ldpi    mdpi  hdpi  xhdpi
+      ppi    120     160    240    320
+
+默认缩放比    0.75    1.0     1.5   2.0
+
+
+二、viewport
+
+    1. 一个pc页面在移动设备上展示效果是怎么样的？
+
+    2. ios viewport 980px
+
+    3. 手机浏览器默认做了两件事情
+
+        1. 页面渲染在一个 980px(ios)的viewport里
+
+        2. 缩放
+
+
+三、 使用meta标签设置viewport
+
+   <meta name="viewport" content =" name = value, name=value">
+
+
+   width: 设置布局viewport的特定值(device-width)
+
+   initial-scale:设置页面的初始缩放
+   
+   minimum-scale：最小缩放
+
+   maximum-scale: 最大缩放
+
+   user-scalable: 用户能否缩放
+
+最终效果:
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    
+
+
+
+
